@@ -1,0 +1,26 @@
+{
+  "name": "demo-ang-lar",
+  "description": "demo website using angular and laravel",
+  "version": "1.0.0",
+  "main": "index.html",
+  "directories": {
+    "test": "tests"
+  },
+  "author": "thuwan",
+  "devDependencies": {
+    "axios": "^0.17",
+    "bootstrap-sass": "^3.3.7",
+    "connect-livereload": "^0.6.0",
+    "cross-env": "^5.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jit-grunt": "^0.10.0",
+    "jquery": "^3.2",
+    "laravel-mix": "^1.0",
+    "lodash": "^4.17.4",
+    "vue": "^2.5.7"
+  }
+}
