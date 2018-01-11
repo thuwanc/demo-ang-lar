@@ -7,7 +7,8 @@
 (function () {
      angular.module('adminlte', [
          'ngRoute',
-         'ngCookies'
+         'ngCookies',
+         'ngPageTitle'
      ]);
 
  })();

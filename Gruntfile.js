@@ -8,12 +8,77 @@ module.exports = function(grunt){
 
 	// });
 
+    // Configurable paths for the angular
+    var angularConfig = {
+        angular: 'angular',
+        dist: 'public'
+    };
 
-	//configure main project settings
+
+	//grunt configure for main project settings
 	grunt.initConfig({
 
 		//basic settings and info about our plugins
 		// pkg: grunt.file.readJSON('package.json');
+
+        // Project settings
+        adminlte : angularConfig,
+
+        // The grunt server settings
+        connect: {
+            options: {
+                port: 7555,
+                hostname: 'localhost',
+                livereload: 35729
+            },
+            server2: {
+                proxies: [
+                    {
+                        context: '/uploads',
+                        host: 'localhost',
+                        port: 8000,
+                        https: false
+                    },
+                    {
+                        context: '/api',
+                        host: 'localhost',
+                        port: 8000,
+                        https: false
+                    },
+                    {
+                        context: '/oauth',
+                        host: 'localhost',
+                        port: 8000,
+                        https: false
+                    }
+
+                ]
+            },
+            livereload: {
+                options: {
+                    open: true,
+                    middleware: function (connect) {
+                        return [proxySnippet,
+                            lrSnippet,
+                            connect.static('<%= inspinia.angular %>/.tmp'),
+                            connect().use(
+                                '/bower_components',
+                                connect.static('./bower_components')
+                            ),
+                            connect.static(angularConfig.angular)
+                        ];
+                    }
+                }
+            },
+            dist: {
+                options: {
+                    port: 4000,
+                    hostname: 'localhost',
+                    open: true,
+                    base: '<%= inspinia.dist %>'
+                }
+            }
+        },
 
 		less:{
 			development: {

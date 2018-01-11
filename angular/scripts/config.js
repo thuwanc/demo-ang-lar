@@ -13,8 +13,8 @@ function config($routeProvider,  $stateProvider, $urlRouterProvider, USER_ROLES)
             controller: LoginController,
             data: {
                 pageTitle: 'Log in',
-                specialClass: 'gray-bg'
-                //authorizedRoles: [USER_ROLES.anonymusUser]}
+                specialClass: 'gray-bg',
+                //authorizedRoles: [USER_ROLES.anonymusUser]
             }
         })
         .state('subscriptionsRegister', {
@@ -23,10 +23,10 @@ function config($routeProvider,  $stateProvider, $urlRouterProvider, USER_ROLES)
             controller: DashboardController,
             data: {
                 pageTitle: 'Dashboard',
-                authorizedRoles: [USER_ROLES.consumer]
+                //authorizedRoles: [USER_ROLES.consumer]
             }
         })
-        /*.state('logout', {
+        .state('logout', {
             url: "/logout",
             name: 'logout',
             templateUrl: "views/logout.html",
@@ -36,7 +36,7 @@ function config($routeProvider,  $stateProvider, $urlRouterProvider, USER_ROLES)
                 specialClass: 'gray-bg'
                 //authorizedRoles: [USER_ROLES.anonymusUser]}
             }
-        })*/;
+        });
 
 }
 
